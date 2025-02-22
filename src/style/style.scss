@@ -1,0 +1,13 @@
+// $primary: ;
+
+@import "bootstrap"; //use full path to bootstrap.scss
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 2rem;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
