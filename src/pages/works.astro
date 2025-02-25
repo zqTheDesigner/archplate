@@ -1,0 +1,27 @@
+---
+import PageLayout from "../layouts/PageLayout.astro"
+
+const works = import.meta.glob("/src/pages/works/*.md")
+const postLinks = Object.keys(works).map((path) => {
+    return {
+        path,
+        url: path.replace("/src/pages/works/", "/works/").replace(".md", ""),
+    }
+})
+---
+
+<div>
+    <PageLayout> Works </PageLayout>
+
+    <ul>
+        {
+            postLinks.map((post) => (
+                <li>
+                    <a href={post.url}>{post.url}</a>
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
+<style></style>

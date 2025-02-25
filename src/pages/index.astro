@@ -1,6 +1,6 @@
 ---
 // import Welcome from '../components/Welcome.astro';
-import Layout from "../layouts/Layout.astro"
+import PageLayout from "../layouts/PageLayout.astro"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,36 +9,4 @@ import Layout from "../layouts/Layout.astro"
 <style lang="scss">
     @use "../style/style.scss";
 </style>
-<Layout>
-    <!-- <Welcome /> -->
-    <div
-        class="d-flex flex-column align-items-center justify-content-center"
-        style="width: 100vw; height: 100vh;"
-    >
-        <div>
-            <img
-                src="logo_L.png"
-                alt="Arch Plate Logo"
-                style="max-width:240px; width: 100%"
-            />
-        </div>
-        <div class="nav my-5 d-flex justify-content-between align-items-center">
-            <a
-                href="https://local-background-b0a.notion.site/About-ArchPlate-1a229285beb580aea7eeea440a9da093"
-                target="_blank">About</a
-            >
-            <a
-                href="https://local-background-b0a.notion.site/Portfolio-1a229285beb580f5a01fdd0baf0a7b0d"
-                target="_blank">Portfolio</a
-            >
-            <a
-                href="https://local-background-b0a.notion.site/Open-Etching-Project-1a229285beb580b380fdea56beaad4a2"
-                target="_blank">Open Etching Project</a
-            >
-            <a
-                href="https://local-background-b0a.notion.site/Contact-Me-1a229285beb580c88546c86c28a77d1b"
-                target="_blank">Contact</a
-            >
-        </div>
-    </div>
-</Layout>
+<PageLayout> Home </PageLayout>

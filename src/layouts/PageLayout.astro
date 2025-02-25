@@ -1,0 +1,67 @@
+---
+import Layout from "./Layout.astro"
+import Nav from "../components/Nav.astro"
+---
+
+<style lang="scss">
+    @use "../style/style.scss";
+</style>
+
+<script>
+    import "bootstrap/dist/js/bootstrap.bundle.min.js"
+</script>
+
+<div>
+    <Layout>
+        <!-- Navbar -->
+        <nav
+            class="navbar navbar-expand-md navbar-light bg-light position-fixed"
+        >
+            <div
+                class="d-flex flex-row justify-content-between align-items-center"
+                style="width: 100vw; border-bottom:#b02a37 solid 4px"
+            >
+                <!-- Brand -->
+                <div>
+                    <a href="/">
+                        <img
+                            src="../logo_L.png"
+                            alt="Arch Plate Logo"
+                            style="width:120px;"
+                            class="p-2"
+                        />
+                    </a>
+                </div>
+                <!-- Navbar Links -->
+                <div class="d-none d-md-block">
+                    <Nav />
+                </div>
+                <!-- Toggle Button for Mobile -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    style="border:none !important ; box-shadow:none !important"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div
+                    class="d-block d-md-none"
+                    style="border-bottom: #b02a37 2px solid;"
+                >
+                    <Nav />
+                </div>
+            </div>
+        </nav>
+    </Layout>
+</div>
+<div style="padding-top: 96px;">
+    <slot />
+</div>

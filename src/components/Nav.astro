@@ -1,0 +1,35 @@
+---
+const fullPath = Astro.url.pathname
+
+const currentPath = "/" + fullPath.split("/")[1] + "/"
+
+const navLinks = [
+    { href: "/about/", label: "About" },
+    { href: "/works/", label: "Works" },
+    { href: "/open_etching_project/", label: "Open Etching Project" },
+    { href: "/contact/", label: "Contact" },
+]
+
+function getClass(href: string) {
+    return href === currentPath ? "fw-bold" : ""
+}
+---
+
+<style lang="scss">
+    @use "../style/style.scss";
+</style>
+<div>
+    <nav
+        class="nav d-flex flex-column flex-md-row justify-content-between align-items-center"
+    >
+        {
+            navLinks.map((link) => (
+                <a href={link.href} class={getClass(link.href)}>
+                    {link.label}
+                </a>
+            ))
+        }
+    </nav>
+</div>
+
+<script></script>

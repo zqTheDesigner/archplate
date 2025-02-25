@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "astro": "^5.1.1",
+    "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.3",
-    "sass": "^1.85.0"
+    "sass": "^1.85.0",
+    "simple-icons-astro": "^14.8.0"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3"
   }
 }
