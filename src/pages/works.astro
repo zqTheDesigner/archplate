@@ -11,17 +11,17 @@ const postLinks = Object.keys(works).map((path) => {
 ---
 
 <div>
-    <PageLayout> Works </PageLayout>
-
-    <ul>
-        {
-            postLinks.map((post) => (
-                <li>
-                    <a href={post.url}>{post.url}</a>
-                </li>
-            ))
-        }
-    </ul>
+    <PageLayout>
+        <ul>
+            {
+                postLinks.map((post) => (
+                    <li>
+                        <a href={post.url}>{post.url}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </PageLayout>
 </div>
 
 <style></style>

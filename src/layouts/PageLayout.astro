@@ -63,5 +63,10 @@ import Nav from "../components/Nav.astro"
     </Layout>
 </div>
 <div style="padding-top: 96px;">
-    <slot />
+    <div
+        class="d-flex justify-content-center "
+        style="width: 100vw; height: calc(100vh - 96px)"
+    >
+        <slot />
+    </div>
 </div>

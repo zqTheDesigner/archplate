@@ -1,9 +1,82 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro"
+
+const resources = import.meta.glob("/src/pages/open_etching_project/*.md")
+const postLinks = Object.keys(resources).map((path) => {
+    return {
+        path,
+        url: path
+            .replace(
+                "/src/pages/open_etching_project/",
+                "/open_etching_project/"
+            )
+            .replace(".md", ""),
+        title: path
+            .replace("/src/pages/open_etching_project/", "")
+            .replace(".md", ""),
+    }
+})
 ---
 
 <div>
-    <PageLayout> Open Etching Project </PageLayout>
+    <PageLayout>
+        <div style="max-width: 600px;" class="pa-5">
+            <p>
+                Keep in mind that all documentation, technique, material lists
+                are published under <a
+                    href="https://creativecommons.org/licenses/by-nc/4.0/deed.en"
+                    >Creative Common Attribution-NonCommercial 4.0 International
+                    License</a
+                >. You must give appropriate credit , provide a link to the
+                license, and indicate if changes were made.
+            </p>
+
+            <h1>Making Printmaking Accessible to All</h1>
+            <p>
+                The Open Etching Project is a revolutionary initiative aimed at
+                transforming the traditionally toxic, expensive, and complex art
+                of etching into a safe, affordable, and accessible practice. For
+                over a century, etching has been confined to professional
+                studios due to its reliance on hazardous acids, heavy presses,
+                and intricate processes. This has made it nearly impossible for
+                individuals to practice etching at home or on a small scale.
+            </p><p>
+                The project introduces electro-etching, a non-toxic alternative
+                to traditional acid etching, as its cornerstone. By using a
+                low-voltage electrical current to etch metal plates, this method
+                eliminates the need for dangerous chemicals. Building on this
+                innovation, I have designed low-cost, DIY tools—such as portable
+                electro-etching kits and lightweight presses—to replace
+                expensive professional equipment. These tools, combined with
+                alternative materials like recycled plates and water-based inks,
+                make etching accessible to beginners, students, and hobbyists
+                alike.
+            </p>
+            <p>
+                I have decided to open-source the techniques and designs I’ve
+                developed, allowing anyone to benefit from this discovery. By
+                sharing this knowledge freely, the Open Etching Project empowers
+                more people to explore printmaking safely and affordably,
+                fostering creativity and inclusivity in the art world. This
+                project is not just about innovation—it’s about making art
+                accessible to everyone, everywhere.
+            </p>
+
+            <h1>Resources</h1>
+
+            <div>
+                <ul>
+                    {
+                        postLinks.map((post) => (
+                            <li>
+                                <a href={post.url}>{post.title}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </PageLayout>
 </div>
 
 <style></style>

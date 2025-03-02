@@ -1,0 +1,26 @@
+---
+import PageLayout from "../layouts/PageLayout.astro"
+
+const artists = await Astro.glob("/src/pages/artists/*.md")
+---
+
+<div>
+    <PageLayout>
+        <div style="max-width: 600px; width:100%">
+            {
+                artists.map((artist) => (
+                    <div>
+                        <h3>{artist.frontmatter.name}</h3>
+                        <i>{artist.frontmatter.title}</i>
+                        <p>
+                            <artist.Content />
+                        </p>
+                    </div>
+                    <hr />
+                ))
+            }
+        </div>
+    </PageLayout>
+</div>
+
+<style></style>
