@@ -10,7 +10,10 @@ import PageLayout from "../layouts/PageLayout.astro"
     @use "../style/style.scss";
 </style>
 <PageLayout>
-    <div style="max-width: 600px; min-width: calc(100vh - 96px);" class="d-flex align-items-center">
+    <div
+        style="max-width: 600px;"
+        class="d-flex flex-column align-items-center"
+    >
         <p>
             At ArchPlate, we specialize in eco-friendly etching for intaglio
             printing using metal plates. Unlike traditional acid-based methods,
@@ -24,5 +27,13 @@ import PageLayout from "../layouts/PageLayout.astro"
             potential, we’re redefining etching as a modern, environmentally responsible
             art form. Join us in crafting beauty without compromise.
         </p>
+
+        <div class="d-flex justify-content-center" style="width: 100%">
+            <img
+                src="/works/wings.jpg"
+                style="max-width: 400px; width:70%; margin:4rem"
+                alt=""
+            />
+        </div>
     </div>
 </PageLayout>

@@ -1,0 +1,43 @@
+---
+import PageLayout from "../layouts/PageLayout.astro"
+
+// const zq = await Astro.glob("/src/pages/artists/ZQ Biblo/Zhang Qiao CV.md")
+import * as zqen from "/src/pages/artists/ZQ Biblo/Zhang Qiao CV EN.md"
+import * as zqch from "/src/pages/artists/ZQ Biblo/Zhang Qiao CV CH.md"
+---
+
+<script>
+    const language_selector = document.getElementById("language_selector")
+
+    language_selector?.addEventListener("change", (evt: any) => {
+        // console.log(evt.target.value)
+        const zqcvch = document.getElementById("zqcvch")
+        const zqcven = document.getElementById("zqcven")
+
+        zqcvch?.setAttribute("style", "display:none")
+        zqcven?.setAttribute("style", "display:none")
+
+        const cv = document.getElementById(evt.target.value)
+        cv?.setAttribute("style", "display:block")
+    })
+</script>
+<div>
+    <PageLayout>
+        <div style="max-width: 600px;" class="pb-4">
+            <div class="language-dropdown mb-4">
+                <label for="language_selector">Language (语言): </label>
+                <select id="language_selector">
+                    <option value="zqcven" selected> English </option>
+                    <option value="zqcvch"> 中文 </option>
+                </select>
+            </div>
+            <div id="zqcven" style="display: block;">
+                {(<zqen.Content />)}
+            </div>
+            <div id="zqcvch" style="display: none;">
+                {(<zqch.Content />)}
+            </div>
+        </div>
+    </PageLayout>
+</div>
+

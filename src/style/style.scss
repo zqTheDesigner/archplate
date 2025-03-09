@@ -6,13 +6,19 @@
     background-color: $gray-100;
 }
 
-.nav a {
+.bg-gray-200 {
+    background-color: $gray-200;
+}
+
+.nav a,
+.works-link {
     text-decoration: none;
     color: $gray-800;
     margin: 0 2rem;
 }
 
-.nav a:hover {
+.nav a:hover,
+.works-link:hover {
     text-decoration: underline;
 }
 
@@ -20,4 +26,17 @@
     .nav a {
         margin: 1rem 0;
     }
+}
+
+.works img {
+    width: 100%;
+    max-width: 600px !important;
+    margin-bottom: 2rem;
+    border: solid 10px white;
+}
+
+.works-cover {
+    width: 100%;
+    max-width: 360px;
+    border: solid 10px white;
 }

@@ -1,26 +1,37 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro"
 
-const works = import.meta.glob("/src/pages/works/*.md")
-const postLinks = Object.keys(works).map((path) => {
-    return {
-        path,
-        url: path.replace("/src/pages/works/", "/works/").replace(".md", ""),
-    }
-})
+const works = await Astro.glob("/src/pages/works/*.md")
 ---
 
 <div>
     <PageLayout>
-        <ul>
+        <div style="max-width: 600px;">
             {
-                postLinks.map((post) => (
-                    <li>
-                        <a href={post.url}>{post.url}</a>
-                    </li>
+                works.map((work: any) => (
+                    <a href={work.url} class="works-link">
+                        <div class="d-flex flex-md-row flex-column align-items-center ">
+                            <div>
+                                <img
+                                    class="works-cover"
+                                    src={work.frontmatter.cover}
+                                />
+                            </div>
+                            <div class="m-4">
+                                <h6 class="my-1 py-1">{work.frontmatter.title}</h6>
+
+                                
+                                <small class="py-1">
+                                    <i>{work.frontmatter.date}</i>
+                                </small>
+                                <br />
+                                <small>{work.frontmatter.author}</small>
+                            </div>
+                        </div>
+                    </a>
                 ))
             }
-        </ul>
+        </div>
     </PageLayout>
 </div>
 

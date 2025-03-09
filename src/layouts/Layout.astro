@@ -7,7 +7,7 @@
         <meta name="generator" content={Astro.generator} />
         <title>Arch Plate - 桥版画</title>
     </head>
-    <style lang="scss">
+    <style lang="scss" is:global>
         @use "../style/style.scss";
         html,
         body {
@@ -16,7 +16,7 @@
             height: 100%;
         }
     </style>
-    <body class="bg-gray-100">
+    <body class="bg-gray-200">
         <div>
             <slot />
         </div>
